@@ -6,8 +6,6 @@ from time import time
 from traders import screen_names
 
 
-
-
 def load_envvars():
     if os.getenv('SERVER_ENV') == 'production':
         return
