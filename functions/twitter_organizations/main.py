@@ -54,6 +54,7 @@ def handle(event, context):
             twitter_status_url = 'https://twitter.com/{handle}/status/{status_id}'
             slack_payload = {'unfurl_links': True, 'channel': slack_channel}
 
+            msg_text = msg.text
             if 'RT @' in msg_text:
                 orig_user = msg.text.split(':')[0].replace('RT @', '')
                 twitter_status_url = twitter_status_url.format(handle=orig_user, status_id=msg.id_str)
