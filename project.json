@@ -1,0 +1,8 @@
+{
+  "name": "tbec-newsbots",
+  "description": "Lambda functions to post crypto related news posts/articles on our slack channel",
+  "memory": 128,
+  "timeout": 5,
+  "role": "arn:aws:iam::354040649140:role/tbec-newsbots_lambda_function",
+  "environment": {}
+}

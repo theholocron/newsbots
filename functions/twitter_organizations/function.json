@@ -1,0 +1,6 @@
+{
+  "description": "Twitter bot written in python to track tweets made by some of most influential organizations in crypto",
+  "hooks":{
+    "build": "pip install -r requirements.txt -t ."
+  }
+}

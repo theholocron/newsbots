@@ -1,0 +1,10 @@
+{      
+    "BOT_PERIODICITY": 5,
+    "TWITTER_RETWEET_THRESHOLD": 5,
+    "TWITTER_CONSUMERKEY": "xxxx",
+    "TWITTER_CONSUMERSECRET": "xxxx",
+    "TWITTER_APP_ACCESSTOKEN": "xxxx",
+    "TWITTER_APP_ACCESSSECRET": "xxxx",
+    "SLACK_WEBHOOK_URL": "xxxx",
+    "SLACK_CHANNEL": "twitter-organizations"
+}
