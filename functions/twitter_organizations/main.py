@@ -3,7 +3,7 @@ import json
 import twitter
 import requests
 from time import time
-from traders import screen_names
+from organizations import screen_names
 
 
 def load_envvars():
@@ -28,11 +28,11 @@ def handle(event, context):
     retweet_threshold = int(os.getenv('TWITTER_RETWEET_THRESHOLD', 5))
 
     twitter_client = twitter.Api(
-                         consumer_key=os.getenv('TWITTER_CONSUMERKEY'),
-                         consumer_secret=os.getenv('TWITTER_CONSUMERSECRET'),
-                         access_token_key=os.getenv('TWITTER_APP_ACCESSTOKEN'),
-                         access_token_secret=os.getenv('TWITTER_APP_ACCESSSECRET')
-                         )
+                     consumer_key=os.getenv('TWITTER_CONSUMERKEY'),
+                     consumer_secret=os.getenv('TWITTER_CONSUMERSECRET'),
+                     access_token_key=os.getenv('TWITTER_APP_ACCESSTOKEN'),
+                     access_token_secret=os.getenv('TWITTER_APP_ACCESSSECRET')
+                     )
     slack_webhook_url = os.getenv('SLACK_WEBHOOK_URL')
     slack_channel = os.getenv('SLACK_CHANNEL')
 
@@ -51,9 +51,6 @@ def handle(event, context):
             if msg.retweet_count < retweet_threshold:
                 continue
 
-            msg_text = msg.text
-
-            orig_user = None
             twitter_status_url = 'https://twitter.com/{handle}/status/{status_id}'
             slack_payload = {'unfurl_links': True, 'channel': slack_channel}
 

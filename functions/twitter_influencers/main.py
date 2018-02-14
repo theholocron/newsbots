@@ -3,7 +3,7 @@ import json
 import twitter
 import requests
 from time import time
-from traders import screen_names
+from influencers import screen_names
 
 
 def load_envvars():
@@ -51,9 +51,6 @@ def handle(event, context):
             if msg.retweet_count < retweet_threshold:
                 continue
 
-            msg_text = msg.text
-
-            orig_user = None
             twitter_status_url = 'https://twitter.com/{handle}/status/{status_id}'
             slack_payload = {'unfurl_links': True, 'channel': slack_channel}
 

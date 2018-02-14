@@ -97,5 +97,4 @@ screen_names = [
     'humaniq',
     'wewallet',
     'bitsoex',
-    '21'
 ]

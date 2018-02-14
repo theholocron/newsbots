@@ -51,9 +51,6 @@ def handle(event, context):
             if msg.retweet_count < retweet_threshold:
                 continue
 
-            msg_text = msg.text
-
-            orig_user = None
             twitter_status_url = 'https://twitter.com/{handle}/status/{status_id}'
             slack_payload = {'unfurl_links': True, 'channel': slack_channel}
 
