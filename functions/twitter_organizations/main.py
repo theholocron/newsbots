@@ -7,9 +7,6 @@ from organizations import screen_names
 
 
 def load_envvars():
-    if os.getenv('SERVER_ENV') == 'production':
-        return
-
     with open('config.json', 'rb') as f:
         env_vars = json.loads(f.read())
 
