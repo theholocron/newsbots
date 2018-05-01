@@ -6,23 +6,14 @@ from time import time
 from organizations import screen_names
 
 
-def load_envvars():
-    with open('config.json', 'rb') as f:
-        env_vars = json.loads(f.read())
-
-    for k, v in env_vars.iteritems():
-        os.environ[k] = str(v)
-
-
 def handle(event, context):
     """
     Lambda handler
     """
 
-    load_envvars()
-
-    periodicity = int(os.getenv('BOT_PERIODICITY', 5))
-    retweet_threshold = int(os.getenv('TWITTER_RETWEET_THRESHOLD', 5))
+    periodicity = int(os.getenv('BOT_PERIODICITY', 15))
+    offset = int(os.getenv('BOT_OFFSET', 5))
+    retweet_threshold = int(os.getenv('TWITTER_RETWEET_THRESHOLD', 10))
 
     twitter_client = twitter.Api(
                      consumer_key=os.getenv('TWITTER_CONSUMERKEY'),
@@ -42,7 +33,10 @@ def handle(event, context):
         for msg in stream:
             msg_time = msg.created_at_in_seconds
 
-            if current_time - msg_time > periodicity * 60: # periodicity param is in minutes
+            if current_time - msg_time > (periodicity  + offset) * 60: # periodicity param is in minutes
+                break
+
+            if current_time - msg_time < offset * 60: # periodicity param is in minutes
                 break
 
             if msg.retweet_count < retweet_threshold:
