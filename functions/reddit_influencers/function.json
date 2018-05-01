@@ -1,0 +1,12 @@
+{
+	"description" : "Reddit bot written in python to track influential subreddits",
+	"hooks" : {
+
+		"build": "pip install -r requirements.txt -t ."
+
+		}
+
+
+
+
+ }
