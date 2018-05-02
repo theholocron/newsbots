@@ -24,6 +24,8 @@ def handle(event, context):
     slack_webhook_url = os.getenv('SLACK_WEBHOOK_URL')
     slack_channel = os.getenv('SLACK_CHANNEL')
 
+    scraped_urls = set()
+
     for screen_name in screen_names:
         current_time = time()
         stream = twitter_client.GetUserTimeline(screen_name=screen_name,
@@ -54,5 +56,8 @@ def handle(event, context):
                 twitter_status_url = twitter_status_url.format(handle=screen_name, status_id=msg.id_str)
                 slack_payload['text'] = '*Tweeted by {t}*.\n{url}'.format(t=screen_name, url=twitter_status_url)
 
+            if twitter_status_url in scraped_urls:
+                continue
             requests.post(slack_webhook_url, json=slack_payload)
+            scraped_urls.add(twitter_status_url)
     return event

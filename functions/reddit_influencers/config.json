@@ -1,0 +1,12 @@
+{
+	"CLIENT_ID" : "kj-HDW0bo063AQ",
+	"CLIENT_SECRET" : "QM2cw5zUDjfzEpBTtWSD46A3b8c",
+	"PASSWORD" : "GYq-4oq-sYe-3pC",
+    "SLACK_WEBHOOK_URL": "https://hooks.slack.com/services/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",
+	"SLACK_CHANNEL" : "subreddits-trending",
+	"USER_AGENT" : "subreddits-bot",
+	"USERNAME" : "__niak__",
+    "BOT_PERIODICITY": "15",
+    "BOT_OFFSET": "120",
+    "UPVOTE_THRESHOLD": "5"
+}
