@@ -1,6 +1,5 @@
 import os
 import praw
-import json
 import pytz
 import requests
 from datetime import timedelta, datetime
