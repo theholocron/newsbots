@@ -1,9 +1,8 @@
-{ 
-	"YOUTUBE_KEY" : "XXXX", 
- 	"NUMBER_OF_VIDEOS" : 50, 
- 	"SLACK_CHANNEL_NAME" : "XXXX", 
- 	"SLACK_WEBHOOK_URL" : "XXXX", 
- 	"VIDEO_UPLOAD_TIME_CHECK" : 900, 
- 	"YOUTUBE_STANDARD_URL" : "https://www.youtube.com/watch?v="
-
- }
+{
+    "YOUTUBE_KEY": "AIzaSyDzBy4uuKFxkpFJ2zEK2ZPQnsDJsR2u4tI",
+    "VIDEOS_TO_QUERY_LIMIT": "50",
+    "BOT_PERIODICITY": "15",
+    "BOT_OFFSET": "1",
+    "SLACK_WEBHOOK_URL": "https://hooks.slack.com/services/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",
+	"SLACK_CHANNEL" : "youtube-influencers"
+}

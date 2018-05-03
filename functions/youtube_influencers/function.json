@@ -1,0 +1,8 @@
+{
+	"description" : "Youtube bot written in python to track influential posters",
+	"hooks" : {
+		"build": "pip install -r requirements.txt -t ."
+    },
+    "runtime": "python2.7",
+    "timeout": 300
+}
