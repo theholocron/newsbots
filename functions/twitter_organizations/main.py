@@ -3,6 +3,7 @@ import pytz
 import twitter
 import requests
 from time import time
+from dateutil import parser
 from datetime import datetime, timedelta
 from organizations import screen_names
 
@@ -15,7 +16,7 @@ def is_quality_post(msg):
     checks to ensure that this reddit thread is a quality post
     """
     current_time = datetime.now(pytz.utc)
-    msg_time = datetime.fromtimestamp(msg.created_at_in_seconds, tz=pytz.utc)
+    msg_time = parser.parse(msg.created_at)
     periodicity = int(os.getenv('BOT_PERIODICITY', 15))
     offset = int(os.getenv('BOT_OFFSET', 5))
 
